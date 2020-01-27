@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		 xmlns:movie = "http://localhost:3030//movie/"
+		 xmlns:snack = "http://localhost:3030//snack/">
+	<rdf:Description rdf:about="http://localhost:3030/cineplexx">
+		<movie:spielt>
+			<rdf:Description rdf:about="http://localhost:3030/movie/AngryBirds">
+				<movie:cinema>Cineplexx</movie:cinema>
+				<movie:title>Angry Birds</movie:title>
+				<movie:date>16-12-2019</movie:date>
+				<movie:price>7,50</movie:price>
+				<movie:timestart>20:15</movie:timestart>
+				<movie:timeend>22:15</movie:timeend>
+			</rdf:Description>
+		</movie:spielt>
+		<movie:spielt>
+			<rdf:Description rdf:about="http://localhost:3030/movie/AngryTest">
+				<movie:cinema>Cineplexx</movie:cinema>
+				<movie:title>Angry Test</movie:title>
+				<movie:date>16-12-2019</movie:date>
+				<movie:price>7,50</movie:price>
+				<movie:timestart>20:15</movie:timestart>
+				<movie:timeend>22:15</movie:timeend>
+			</rdf:Description>
+		</movie:spielt>
+		<movie:spielt>
+			<rdf:Description rdf:about="http://localhost:3030/movie/Joker">
+				<movie:cinema>Cineplexx</movie:cinema>
+				<movie:title>Joker</movie:title>
+				<movie:date>16-12-2019</movie:date>
+				<movie:price>7,50</movie:price>
+				<movie:timestart>20:15</movie:timestart>
+				<movie:timeend>22:15</movie:timeend>
+			</rdf:Description>
+		</movie:spielt>
+		<movie:spielt>
+			<rdf:Description rdf:about="http://localhost:3030/movie/Avengers">
+				<movie:cinema>Cineplexx</movie:cinema>
+				<movie:title>Avengers Endgame</movie:title>
+				<movie:date>16-12-2019</movie:date>
+				<movie:price>7,50</movie:price>
+				<movie:timestart>20:15</movie:timestart>
+				<movie:timeend>22:15</movie:timeend>
+			</rdf:Description>
+		</movie:spielt>
+		<snack:serviert>
+			<rdf:Description rdf:about="http://localhost:3030/snack/PopcornLarge">
+				<snack:cinema>Cineplexx</snack:cinema>
+				<snack:name>Popcorn</snack:name>
+				<snack:price>3,50</snack:price>
+				<snack:size>Large</snack:size>
+			</rdf:Description>
+		</snack:serviert>
+		<snack:serviert>
+			<rdf:Description rdf:about="http://localhost:3030/snack/PopcornMedium">
+				<snack:cinema>Cineplexx</snack:cinema>
+				<snack:name>Popcorn</snack:name>
+				<snack:price>2,50</snack:price>
+				<snack:size>Medium</snack:size>
+			</rdf:Description>
+		</snack:serviert>
+		<snack:serviert>
+			<rdf:Description rdf:about="http://localhost:3030/snack/PopcornSmall">
+				<snack:cinema>Cineplexx</snack:cinema>
+				<snack:name>Popcorn</snack:name>
+				<snack:price>1,50</snack:price>
+				<snack:size>Small</snack:size>
+			</rdf:Description>
+		</snack:serviert>
+		<snack:serviert>
+			<rdf:Description rdf:about="http://localhost:3030/snack/Nachos">
+				<snack:cinema>Cineplexx</snack:cinema>
+				<snack:name>Nachos</snack:name>
+				<snack:price>3,00</snack:price>
+				<snack:size>Normal</snack:size>
+			</rdf:Description>
+		</snack:serviert>
+	</rdf:Description>
+
+</rdf:RDF>

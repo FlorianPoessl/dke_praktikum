@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body onbeforeunload="exitAdminPage()">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/customCss/main.css">
+<script type="text/javascript" src="/customJs/admin.js"></script>
+<script type="text/javascript" src="/customJs/main.js"></script>
+<script src="https://kit.fontawesome.com/dfbdf2ff96.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="/customJs/jQueryPlugin.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<div class="headline headlineBack">
+    <span title="Zur Startseite zurückkehren" onclick="returnToHome()">Kinoübersicht</span>
+    <div class="parent headline headlineBack marginBottomDiv">
+        <div class="child inline-block-child movieSymbol"><i class="fas fa-cogs"></i></div>
+        <div class='child inline-block-child'>Administration</div>
+    </div>
+</div>
+<div class="adminHeader">
+    <div class="smallHeader" style="float: left">
+        Generelle Attribute
+    </div>
+    <div style="float: right">
+        <button title="Reihe hinzufügen" onclick="addRowMetadataTable('general')" class="addButton"><i class="fas fa-plus"></i></button>
+    </div>
+</div>
+<div class="table-container">
+<table id="generalMetadataTable" class="table thead-dark table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+        <th class="indexColumn">#</th>
+        <th class="attributeColumn">Attribute</th>
+        <th class="valuesColumn">Values</th>
+        <th>Synonyms</th>
+    </tr>
+    </thead>
+    <tbody id="generalMetadataTableBody">
+    </tbody>
+</table>
+</div>
+<div style="margin-top: 20px">
+    <div class="adminHeader">
+        <div class="smallHeader" style="float: left">
+            Film Attribute
+        </div>
+        <div style="float: right">
+            <button title="Reihe hinzufügen" onclick="addRowMetadataTable('movie')" class="addButton"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+    <div class="table-container">
+        <table id="movieMetadataTable" class="table thead-dark table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="indexColumn">#</th>
+                <th class="attributeColumn">Attribute</th>
+                <th class="valuesColumn">Values</th>
+                <th>Synonyms</th>
+            </tr>
+            </thead>
+            <tbody id="movieMetadataTableBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+<div style="margin-top: 20px">
+    <div class="adminHeader">
+        <div class="smallHeader" style="float: left">
+            Snack Attribute
+        </div>
+        <div style="float: right">
+            <button title="Reihe hinzufügen" onclick="addRowMetadataTable('snack')" class="addButton"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+    <div class="table-container">
+        <table id="snackMetadataTable" class="table thead-dark table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="indexColumn">#</th>
+                <th class="attributeColumn">Attribute</th>
+                <th class="valuesColumn">Values</th>
+                <th>Synonyms</th>
+            </tr>
+            </thead>
+            <tbody id="snackMetadataTableBody">
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<script>
+    $(document).ready(loadAdminPage());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<http://localhost:8082/Movieplex> <http://localhost:8082/zeigt> <http://localhost:8082/film/AngryBirds>.
+<http://localhost:8082/Movieplex> <http://localhost:8082/zeigt> <http://localhost:8082/film/Joker>.
+<http://localhost:8082/Movieplex> <http://localhost:8082/zeigt> <http://localhost:8082/film/Frozen2>.
+
+<http://localhost:8082/film/AngryBirds> <http://localhost:8082/name> "Angry Birds".
+<http://localhost:8082/film/AngryBirds> <http://localhost:8082/datum> "10-01-2020".
+<http://localhost:8082/film/AngryBirds> <http://localhost:8082/beginn> "15:30".
+<http://localhost:8082/film/AngryBirds> <http://localhost:8082/ende> "17:30".
+<http://localhost:8082/film/AngryBirds> <http://localhost:8082/ticketpreis> "5,00".
+<http://localhost:8082/film/AngryBirds> <http://localhost:8082/kino> "Movieplex".
+
+<http://localhost:8082/film/Joker> <http://localhost:8082/name> "Joker".
+<http://localhost:8082/film/Joker> <http://localhost:8082/datum> "10-01-2020".
+<http://localhost:8082/film/Joker> <http://localhost:8082/beginn> "15:30".
+<http://localhost:8082/film/Joker> <http://localhost:8082/ende> "17:30".
+<http://localhost:8082/film/Joker> <http://localhost:8082/ticketpreis> "5,00".
+<http://localhost:8082/film/Joker> <http://localhost:8082/kino> "Movieplex".
+
+<http://localhost:8082/film/Frozen2> <http://localhost:8082/name> "Frozen 2".
+<http://localhost:8082/film/Frozen2> <http://localhost:8082/datum> "10-01-2020".
+<http://localhost:8082/film/Frozen2> <http://localhost:8082/beginn> "15:30".
+<http://localhost:8082/film/Frozen2> <http://localhost:8082/ende> "17:30".
+<http://localhost:8082/film/Frozen2> <http://localhost:8082/ticketpreis> "5,00".
+<http://localhost:8082/film/Frozen2> <http://localhost:8082/kino> "Movieplex".
+
+<http://localhost:8082/Movieplex> <http://localhost:8082/serviert> <http://localhost:8082/verpflegung/Nachos>.
+<http://localhost:8082/Movieplex> <http://localhost:8082/serviert> <http://localhost:8082/verpflegung/Chips>.
+<http://localhost:8082/Movieplex> <http://localhost:8082/serviert> <http://localhost:8082/verpflegung/Popcorn>.
+<http://localhost:8082/Movieplex> <http://localhost:8082/serviert> <http://localhost:8082/verpflegung/Cola>.
+<http://localhost:8082/Movieplex> <http://localhost:8082/serviert> <http://localhost:8082/verpflegung/Fanta>.
+
+<http://localhost:8082/verpflegung/Nachos> <http://localhost:8082/snack> "Nachos".
+<http://localhost:8082/verpflegung/Nachos> <http://localhost:8082/kosten> "1,5".
+<http://localhost:8082/verpflegung/Nachos> <http://localhost:8082/portion> "klein".
+
+<http://localhost:8082/verpflegung/Chips> <http://localhost:8082/snack> "Chips".
+<http://localhost:8082/verpflegung/Chips> <http://localhost:8082/kosten> "3,5".
+<http://localhost:8082/verpflegung/Chips> <http://localhost:8082/portion> "200g".
+
+<http://localhost:8082/verpflegung/Popcorn> <http://localhost:8082/snack> "Popcorn".
+<http://localhost:8082/verpflegung/Popcorn> <http://localhost:8082/kosten> "1,5".
+<http://localhost:8082/verpflegung/Popcorn> <http://localhost:8082/portion> "mittel".
+
+<http://localhost:8082/verpflegung/Cola> <http://localhost:8082/snack> "Cola".
+<http://localhost:8082/verpflegung/Cola> <http://localhost:8082/kosten> "2,5".
+<http://localhost:8082/verpflegung/Cola> <http://localhost:8082/portion> "groß".
+
+<http://localhost:8082/verpflegung/Fanta> <http://localhost:8082/snack> "Fanta".
+<http://localhost:8082/verpflegung/Fanta> <http://localhost:8082/kosten> "2,5".
+<http://localhost:8082/verpflegung/Fanta> <http://localhost:8082/portion> "klein".

@@ -1,0 +1,161 @@
+.headline {
+    font-size: 30px;
+    color: white;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.marginBottomDiv {
+    margin-bottom: 10px;
+}
+
+.headlineBack {
+    background-color: #012D77;
+    width:99%;
+}
+
+.movieButton {
+    background-color: #1F7701;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
+.snackButton {
+    background-color: #1F7701;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
+.adminButton {
+    background-color: #2547B2;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
+.searchMovieButton {
+    background-color: #1F7701;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
+.searchSnackButton {
+    background-color: #1F7701;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
+.addButton {
+    background-color: #1F7701;
+    font-size: 22px;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    color: white;
+}
+
+.leftTextMargin {
+    margin-left: 50px;
+}
+
+.movieSymbol {
+   font-size: 25px;
+   width: 50px;
+   height: 50px;
+   color: white;
+}
+
+.inline-block-child {
+  display: inline-block;
+}
+
+.formHeader {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.formTextInput {
+    margin-bottom: 5px;
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+.resultTable {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.table-container {
+    height: 10em;
+}
+table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+table thead {
+    /* head takes the height it requires,
+    and it's not scaled when table is resized */
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+table tbody {
+    /* body takes all the remaining available space */
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+table tbody tr {
+    width: 100%;
+}
+table thead, table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+.adminHeader {
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+}
+
+.smallHeader {
+    font-size: 28px;
+}
+
+.indexColumn {
+    width: 40px;
+}
+
+.attributeColumn {
+    width: 300px;
+}
+
+.valuesColumn {
+    width: 400px;
+}

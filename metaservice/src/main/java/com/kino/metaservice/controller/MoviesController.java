@@ -28,11 +28,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 
 @RestController
 public class MoviesController extends AbstractController {
 
     private final String MOVIE_URL = "http://localhost:3330/movie/";
+    private final String INPUT_DATE = "yyyy-mm-dd";
+    private final String OUTPUT_DATE = "dd-mm-yyyy";
 
     @GetMapping("/movies")
     public ModelAndView getMovieView() throws IOException {
@@ -77,7 +82,7 @@ public class MoviesController extends AbstractController {
         queryStr.append("}");
         System.out.println("Query for FusekiServer:\n" + queryStr.toString());
         System.out.println("Query End-------------------------------");
-        FusekiQueryExecution.executeUpdate(queryStr.toString());
+        FusekiQueryExecution.executeUpdateWebserviceTwo(queryStr.toString());
     }
 
     private void readFirstWebservice() throws IOException {
@@ -114,19 +119,15 @@ public class MoviesController extends AbstractController {
         queryStr.append("}");
         System.out.println("Query for FusekiServer:\n" + queryStr.toString());
         System.out.println("Query End-------------------------------");
-        FusekiQueryExecution.executeUpdate(queryStr.toString());
+        FusekiQueryExecution.executeUpdateWebserviceOne(queryStr.toString());
     }
 
     @GetMapping("/searchMovies")
-    public String getSearchedMovies(@RequestParam("movieName") String movieName, @RequestParam("movieDate") String movieDate, @RequestParam("movieTime") String movieTime) {
+    public String getSearchedMovies(@RequestParam("movieName") String movieName, @RequestParam("movieDate") String movieDate, @RequestParam("movieTime") String movieTime) throws ParseException {
         String metaName = "";
-        System.out.println(movieName);
         if(StringUtils.isNotEmpty(movieName)) {
             metaName = metadataService.getGeneralizedMovie(movieName);
         }
-        System.out.println(movieDate);
-        System.out.println(movieTime);
-
         ParameterizedSparqlString queryStr = new ParameterizedSparqlString();
         Map<String, String> prefixMap = new HashMap<>();
         prefixMap.put("movie", "http://localhost:3330//");
@@ -137,13 +138,15 @@ public class MoviesController extends AbstractController {
         queryStr.append("?movie movie:Preis ?price.");
         queryStr.append("?movie movie:Datum ?date.");
         queryStr.append("?movie movie:Startzeit ?timestart.");
-        queryStr.append("?movie movie:Endzeit ?cinema.");
-        queryStr.append("?movie movie:Kino ?timeend.");
+        queryStr.append("?movie movie:Endzeit ?timeend.");
+        queryStr.append("?movie movie:Kino ?cinema.");
         if(StringUtils.isNotEmpty(movieTime)) {
-            queryStr.append("FILTER (?timeend > \"" + movieTime + "\").");
+            queryStr.append("FILTER (?timestart >= \"" + movieTime + "\").");
         }
         if(StringUtils.isNotEmpty(movieDate)) {
-            queryStr.append("FILTER (?date >= \"" + movieDate + "\").");
+            Date date = new SimpleDateFormat(INPUT_DATE).parse(movieDate);
+            String movieDateFormatted = new SimpleDateFormat(OUTPUT_DATE).format(date);
+            queryStr.append("FILTER (?date >= \"" + movieDateFormatted + "\").");
         }
         queryStr.append("FILTER (contains(str(?movie), \"" + metaName + "\")).");
 
@@ -151,20 +154,26 @@ public class MoviesController extends AbstractController {
 
         String query = queryStr.toString();
         System.out.println(query);
-        List<QuerySolution> solutions = FusekiQueryExecution.executeQuery(query);
+        List<QuerySolution> solutionsOne = FusekiQueryExecution.executeQueryWebserviceOne(query);
+        List<QuerySolution> solutionsTwo = FusekiQueryExecution.executeQueryWebserviceTwo(query);
         JsonArray jsonArray = new JsonArray();
-        for(QuerySolution qs : solutions) {
+        for(QuerySolution qs : solutionsOne) {
             JsonObject jsonObject = new JsonObject();
             Iterator<String> iterator = qs.varNames();
             while(iterator.hasNext()) {
                 String var = iterator.next();
-                System.out.println(var);
-                System.out.println(qs.getLiteral(var).getString());
                 jsonObject.addProperty(var, qs.getLiteral(var).getString());
             }
-            System.out.println(jsonObject.toString());
             jsonArray.add(jsonObject);
-            System.out.println(jsonArray.toString());
+        }
+        for(QuerySolution qs : solutionsTwo) {
+            JsonObject jsonObject = new JsonObject();
+            Iterator<String> iterator = qs.varNames();
+            while(iterator.hasNext()) {
+                String var = iterator.next();
+                jsonObject.addProperty(var, qs.getLiteral(var).getString());
+            }
+            jsonArray.add(jsonObject);
         }
         System.out.println(jsonArray.toString());
         return jsonArray.toString();

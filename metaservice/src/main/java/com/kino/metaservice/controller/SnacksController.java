@@ -73,8 +73,6 @@ public class SnacksController extends AbstractController {
         queryStr.append("{\n");
         for (ExtendedIterator<Triple> it = tripleIterator; it.hasNext(); ) {
             Triple triple = it.next();
-            System.out.println(triple.getSubject().getLocalName());
-            System.out.println(triple.getPredicate().getLocalName());
             String snack = metadataService.getGeneralizedSnack(triple.getSubject().getLocalName());
             String attribute = metadataService.getGeneralizedAttribute(triple.getPredicate().getLocalName());
             queryStr.append("<" + SNACK_URL + snack + ">" + "<" + GENERAL_URL + attribute + ">" + triple.getObject().toString() + " ." + "\n");
@@ -82,7 +80,7 @@ public class SnacksController extends AbstractController {
         queryStr.append("}");
         System.out.println("Query for FusekiServer:\n" + queryStr.toString());
         System.out.println("Query End-------------------------------");
-        FusekiQueryExecution.executeUpdate(queryStr.toString());
+        FusekiQueryExecution.executeUpdateWebserviceOne(queryStr.toString());
     }
 
     private void readSecondWebservice() throws IOException {
@@ -115,7 +113,7 @@ public class SnacksController extends AbstractController {
         queryStr.append("}");
         System.out.println("Query for FusekiServer:\n" + queryStr.toString());
         System.out.println("Query End-------------------------------");
-        FusekiQueryExecution.executeUpdate(queryStr.toString());
+        FusekiQueryExecution.executeUpdateWebserviceTwo(queryStr.toString());
     }
 
     @GetMapping("/searchSnacks")
@@ -140,20 +138,26 @@ public class SnacksController extends AbstractController {
 
         String query = queryStr.toString();
         System.out.println(query);
-        List<QuerySolution> solutions = FusekiQueryExecution.executeQuery(query);
+        List<QuerySolution> solutionsOne = FusekiQueryExecution.executeQueryWebserviceOne(query);
+        List<QuerySolution> solutionsTwo = FusekiQueryExecution.executeQueryWebserviceTwo(query);
         JsonArray jsonArray = new JsonArray();
-        for(QuerySolution qs : solutions) {
+        for(QuerySolution qs : solutionsOne) {
             JsonObject jsonObject = new JsonObject();
             Iterator<String> iterator = qs.varNames();
             while(iterator.hasNext()) {
                 String var = iterator.next();
-                System.out.println(var);
-                System.out.println(qs.getLiteral(var).getString());
                 jsonObject.addProperty(var, qs.getLiteral(var).getString());
             }
-            System.out.println(jsonObject.toString());
             jsonArray.add(jsonObject);
-            System.out.println(jsonArray.toString());
+        }
+        for(QuerySolution qs : solutionsTwo) {
+            JsonObject jsonObject = new JsonObject();
+            Iterator<String> iterator = qs.varNames();
+            while(iterator.hasNext()) {
+                String var = iterator.next();
+                jsonObject.addProperty(var, qs.getLiteral(var).getString());
+            }
+            jsonArray.add(jsonObject);
         }
         System.out.println(jsonArray.toString());
         return jsonArray.toString();

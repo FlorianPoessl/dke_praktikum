@@ -32,19 +32,24 @@
 <http://localhost:8082/verpflegung/Nachos> <http://localhost:8082/snack> "Nachos".
 <http://localhost:8082/verpflegung/Nachos> <http://localhost:8082/kosten> "1,5".
 <http://localhost:8082/verpflegung/Nachos> <http://localhost:8082/portion> "klein".
+<http://localhost:8082/verpflegung/Nachos> <http://localhost:8082/kino> "Movieplex".
 
 <http://localhost:8082/verpflegung/Chips> <http://localhost:8082/snack> "Chips".
 <http://localhost:8082/verpflegung/Chips> <http://localhost:8082/kosten> "3,5".
 <http://localhost:8082/verpflegung/Chips> <http://localhost:8082/portion> "200g".
+<http://localhost:8082/verpflegung/Chips> <http://localhost:8082/kino> "Movieplex".
 
 <http://localhost:8082/verpflegung/Popcorn> <http://localhost:8082/snack> "Popcorn".
 <http://localhost:8082/verpflegung/Popcorn> <http://localhost:8082/kosten> "1,5".
 <http://localhost:8082/verpflegung/Popcorn> <http://localhost:8082/portion> "mittel".
+<http://localhost:8082/verpflegung/Popcorn> <http://localhost:8082/kino> "Movieplex".
 
 <http://localhost:8082/verpflegung/Cola> <http://localhost:8082/snack> "Cola".
 <http://localhost:8082/verpflegung/Cola> <http://localhost:8082/kosten> "2,5".
 <http://localhost:8082/verpflegung/Cola> <http://localhost:8082/portion> "groß".
+<http://localhost:8082/verpflegung/Cola> <http://localhost:8082/kino> "Movieplex".
 
 <http://localhost:8082/verpflegung/Fanta> <http://localhost:8082/snack> "Fanta".
 <http://localhost:8082/verpflegung/Fanta> <http://localhost:8082/kosten> "2,5".
 <http://localhost:8082/verpflegung/Fanta> <http://localhost:8082/portion> "klein".
+<http://localhost:8082/verpflegung/Fanta> <http://localhost:8082/kino> "Movieplex".

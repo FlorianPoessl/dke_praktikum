@@ -99,12 +99,14 @@ public class FusekiServiceImpl implements FusekiService {
         queryStr.append("?x verpflegung:snack ?snack.\n");
         queryStr.append("?x verpflegung:kosten ?kosten.\n");
         queryStr.append("?x verpflegung:portion ?portion.\n");
+        queryStr.append("?x verpflegung:kino ?kino.\n");
         queryStr.append("}");
         queryStr.append("WHERE");
         queryStr.append("{ ");
         queryStr.append("?x verpflegung:snack ?snack.\n");
         queryStr.append("?x verpflegung:kosten ?kosten.\n");
         queryStr.append("?x verpflegung:portion ?portion.\n");
+        queryStr.append("?x verpflegung:kino ?kino.\n");
         queryStr.append("}");
         System.out.println(queryStr.toString());
 

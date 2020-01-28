@@ -100,7 +100,7 @@ public class FusekiServiceImpl implements FusekiService {
         ParameterizedSparqlString queryStr = new ParameterizedSparqlString();
         Map<String, String> prefixMap = new HashMap<>();
         prefixMap.put("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-        prefixMap.put("snack", "http://localhost:3030//snack");
+        prefixMap.put("snack", "http://localhost:3030//snack/");
         queryStr.setNsPrefixes(prefixMap);
         queryStr.append("CONSTRUCT { ");
         queryStr.append("?x snack:cinema ?cinema.\n");
